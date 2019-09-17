@@ -1,3 +1,4 @@
+// import name from 'name';
 
 // CODE here for your Lambda Classes
 
@@ -10,7 +11,7 @@ class Person {
  }
 
     speak() {
-        return `Hello, my name is ${name} and I am from ${location}`;
+        return `Hello, my name is ${this.name} and I am from ${this.location}`;
     }
   };
 
@@ -19,13 +20,13 @@ class Person {
           super(inst);
           this.specialty = inst.specialty,
           this.favLanguage = inst.favLanguage,
-          this.catchPhrase = inst.catchPhrase
+          this.catchPhrase = inst.catchPhrase          
       }
       demo() {
-          return `Today we are learning about ${subject}`;
+          return `Today we are learning about ${this.subject}`;
       }
       grade(){
-          return `${student.name} receives a perfect score on ${subject}`;
+          return `${this.name} receives a perfect score on ${this.subject}`;
       }
   };
 
@@ -39,26 +40,34 @@ class Person {
     
     
         PRAssignment() {
-           return `${student.name} has submitted a PR for ${subject}`;
+           return `${this.name} has submitted a PR for ${this.subject}`;
         }
-        springCHallenge() {
-            return `${student.name} has begun spring challenge of ${subject}`;
+        sprintChallenge() {
+            return `${this.name} has begun sprint challenge of ${this.subject}`;
         }
   };
 
     class ProjectManager extends Instructor {
-        constructor(pM) {
-            super(pM);
-             this.gradClassName = pM.gradClassName,
-             this.favInstructor = pM.favInstructor
+        constructor(projMgr) {
+            super(projMgr);
+             this.gradClassName = projMgr.gradClassName,
+             this.favInstructor = projMgr.favInstructor
         }
-        standUp() {
-            return `${this.name} announces to ${channel}, @channel standy times!`;
+        standUp(channel) {
+            return `${this.name} announces to ${channel} @channel standy times!`;
         }
         debugsCode() {
-            returns `${this.name} debugs ${student.name}'s code on ${subject}`;
+            return `${this.name} debugs ${this.name}'\s code on ${this.subject}`;
         }
     };
+
+    // const stu = {
+    //     name: 'Steve',
+    //     age: 35
+    // }
+
+    // const steve = new Student(stu);
+    // steve.sprintChallenge('Logan', 'JSV');
 
     const logan = new Student ({
         name: 'Logan',
@@ -94,4 +103,8 @@ class Person {
 
     });
 
-    
+  console.log(logan.sprintChallenge('Logan', 'JavaScript'));
+  console.log(sharla.speak());
+  console.log(willie.debugsCode('Willie', 'Logan', 'CSS' ));
+  console.log(sharla.demo('JSON'));
+   

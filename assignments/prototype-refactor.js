@@ -36,7 +36,7 @@ Prototype Refactor
         this.weapons = human.weapons,
         this.language = human.language
         }
-        greet = function() {
+        greet() {
             return `${this.name} offers a greeting in ${this.language}`;
     }
 };
@@ -92,6 +92,49 @@ Prototype Refactor
       language: 'Elvish',
     });
   
+    class Shero extends Humanoid {
+      constructor(hero) {
+        super(hero);
+      }
+
+      saysHello() {
+      return `${this.name} is here to save you!`;
+    }
+  };
+
+    class Villian extends Humanoid {
+      constructor(vile){
+        super(vile);
+      }
+
+      destroyYou() {
+        return `I am here to destroy you!`;
+      }
+    }
+
+    const naomi = new Shero ({
+      createdAt: new Date(),
+      dimensions: {
+        length: 3,
+        width: 1,
+        heigth: 1
+      },
+      name: 'Naomi',
+      location: 'Forest Kingdom'
+    });
+
+    const evildoer = new Villian ({
+      createdAt: new Date(),
+      dimensions: {
+        length: 4,
+        width: 2,
+        heigth: 2
+      },
+      name: 'Jeff',
+      location: 'under the bed'
+
+   });
+
     console.log(mage.createdAt); // Today's date
     console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
     console.log(swordsman.healthPoints); // 15
@@ -102,7 +145,7 @@ Prototype Refactor
     console.log(archer.greet()); // Lilith offers a greeting in Elvish.
     console.log(mage.takeDamage()); // Bruce took damage.
     console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
-    // console.log(evildoer.createdAt);
-    // console.log(dogooder.createdAt);
-    // console.log(dogooder.takeDamage());
-    // console.log(evildoer.destroy());
+    console.log(naomi.saysHello()); 
+    console.log(naomi.createdAt);
+    console.log(evildoer.takeDamage());
+    console.log(evildoer.destroy());
