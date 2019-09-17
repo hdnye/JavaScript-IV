@@ -23,7 +23,7 @@ class Person {
           this.catchPhrase = inst.catchPhrase          
       }
       demo() {
-          return `Today we are learning about ${this.subject}`;
+          return `Today we are learning about ${this.favLanguage}`;
       }
       grade(){
           return `${this.name} receives a perfect score on ${this.subject}`;
@@ -79,7 +79,8 @@ class Person {
             'CSS',
             'React',
             'JavaScript'
-        ]
+        ],
+        subject: 'CSS'
     });
 
     const sharla = new Instructor ({
@@ -99,12 +100,13 @@ class Person {
         location: 'Minnetonka',
         previousBackground: 'Willy Free-er',
         gradClassName: 'Webpt10',
-        favInstructor: 'Sharla'
+        favInstructor: 'Sharla',
+        subject: 'JavaScript'
 
     });
 
   console.log(logan.sprintChallenge('Logan', 'JavaScript'));
   console.log(sharla.speak());
   console.log(willie.debugsCode('Willie', 'Logan', 'CSS' ));
-  console.log(sharla.demo('JSON'));
+  console.log(sharla.demo());
    
